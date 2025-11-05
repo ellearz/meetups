@@ -14,6 +14,16 @@ A modern Flutter application for discovering and filtering sports meetups.
 - Detailed filter drawer
 - WhatsApp community card
 - Modern card-based layout
+- 
+## 📱 Screenshots
+
+| Main Screen | Filter Drawer |
+|-------------|---------------|
+| <img src="screenshot1.jpg" width="300"> | <img src="screenshot1.jpg" width="300"> |
+
+| Main Screen | Active Filters |
+|---------------|----------------|
+| <img src="screenshot2.jpg" width="300"> | <img src="screenshot2.jpg" width="300"> |
 
 ## Tech Stack
 - **Framework**: Flutter
