@@ -17,11 +17,11 @@ A modern Flutter application for discovering and filtering sports meetups.
 - 
 ## 📱 Screenshots
 
-| Main Screen | Filter Drawer |
+|  Filter Drawer |
 |-------------|---------------|
 | <img src="screenshot1.jpg" width="300"> 
 
-| Main Screen | Active Filters |
+| Active Filters |
 |---------------|----------------|
 | <img src="screenshot2.jpg" width="300">
 
