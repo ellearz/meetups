@@ -10,6 +10,7 @@ class MeetupProvider with ChangeNotifier {
   List<Meetup> _filteredMeetups = [];
   bool _isLoading = false;
   bool _hasLoaded = false;
+  String? _error; // Add error state
 
   Map<String, List<String>> _activeFilters = {
     'date': [],
@@ -23,16 +24,17 @@ class MeetupProvider with ChangeNotifier {
   List<Meetup> get meetups => _filteredMeetups;
   Map<String, List<String>> get activeFilters => _activeFilters;
   bool get isLoading => _isLoading;
+  String? get error => _error; // Expose error
   
   bool get hasActiveFilters => _activeFilters.entries.any(
         (filter) => filter.value.isNotEmpty,
       );
 
-
   Future<void> loadMeetups() async {
     if (_hasLoaded) return;
     
     _isLoading = true;
+    _error = null; // Reset error
     notifyListeners();
     
     try {
@@ -40,7 +42,7 @@ class MeetupProvider with ChangeNotifier {
       _filteredMeetups = _meetups;
       _hasLoaded = true;
     } catch (e) {
-   
+      _error = 'Failed to load meetups: $e';
     } finally {
       _isLoading = false;
       notifyListeners();
@@ -49,20 +51,20 @@ class MeetupProvider with ChangeNotifier {
 
   Future<void> applyFilters(Map<String, List<String>> newFilters) async {
     _isLoading = true;
+    _error = null;
     notifyListeners();
     
     try {
       _activeFilters = newFilters;
-      
-      await Future.delayed(Duration(milliseconds: 300));
-      
       _filteredMeetups = await repository.getFilteredMeetups(newFilters);
     } catch (e) {
-     } finally {
+      _error = 'Failed to apply filters: $e';
+    } finally {
       _isLoading = false;
       notifyListeners();
     }
   }
+
 
   void toggleFilter(String category, String value) {
     final newFilters = Map<String, List<String>>.from(_activeFilters);

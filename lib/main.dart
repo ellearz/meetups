@@ -1,5 +1,8 @@
+import 'package:events_app/presentation/providers/meetup_providers.dart';
 import 'package:events_app/presentation/screens/meetup_lists.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 
 
 
@@ -10,15 +13,18 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MyMeetups',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Inter',
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => MeetupProvider(),
+      child: MaterialApp(
+        title: 'MyMeetups',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: 'Inter',
+          useMaterial3: true,
+        ),
+        home: MeetupListScreen(),
+        debugShowCheckedModeBanner: false,
       ),
-      home: MeetupListScreen(),
     );
   }
 }
