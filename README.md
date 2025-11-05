@@ -27,11 +27,13 @@ A modern Flutter application for discovering and filtering sports meetups.
 
 </div>
 
-## Tech Stack
+##  Tech Stack
+
 - **Framework**: Flutter
-- **State Management**: ChangeNotifier
+- **State Management**: Provider + ChangeNotifier
 - **Architecture**: Clean Architecture
-- **Calendar**: table_calendar package
+- **Calendar**: table_calendar
+- **Styling**: Material Design 3
 
 ## Setup Instructions
 
