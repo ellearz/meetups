@@ -1,17 +1,31 @@
-# events_app
+# MyMeetups App
 
-A new Flutter project.
+A modern Flutter application for discovering and filtering sports meetups.
 
-## Getting Started
+## Features
+- 🎯 Advanced filtering system (date, location, sport type, difficulty)
+- 📅 Real calendar integration for date selection
+- 💬 WhatsApp community integration
+- 🎨 Modern, clean UI design
+- 📱 Responsive design for all screen sizes
 
-This project is a starting point for a Flutter application.
+## Screens
+- Meetup list with filtering
+- Detailed filter drawer
+- WhatsApp community card
+- Modern card-based layout
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
+- **Framework**: Flutter
+- **State Management**: ChangeNotifier
+- **Architecture**: Clean Architecture
+- **Calendar**: table_calendar package
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Setup Instructions
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# meetups
+1. Extract the zip file
+2. Open in Android Studio/VSCode
+3. Run `flutter pub get`
+4. Run `flutter run`
+
+## Project Structure
